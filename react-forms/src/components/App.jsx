@@ -10,13 +10,16 @@ function App() {
   function handleClick() {
     setHeaderName(name);
   }
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
 
   return (
-    <div className="container">
+    <form className="container" onSubmit={handleSubmit}>
       <h1>Hello {headerName}</h1>
       <input onChange={handleChange} value={name} type="text" placeholder="What's your name?" />
       <button onClick={handleClick}>Submit</button>
-    </div>
+    </form>
   );
 }
 
